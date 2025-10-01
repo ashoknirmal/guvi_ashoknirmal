@@ -1,0 +1,133 @@
+/* styles.css */
+
+/* General page styling */
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 15px;
+  overflow-x: hidden;
+}
+
+/* Container Card */
+.container {
+  max-width: 500px;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  animation: slideFadeIn 0.7s ease-out;
+}
+
+/* Headings */
+h2, h3 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--bs-primary);
+  animation: fadeInDown 0.8s ease both;
+}
+
+/* Profile details */
+p {
+  margin: 8px 0;
+  font-size: 15px;
+  animation: fadeIn 1s ease both;
+}
+p b {
+  color: var(--bs-primary);
+}
+
+/* Form controls */
+.form-control {
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease;
+}
+.form-control:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.3);
+  transform: scale(1.02);
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Pulse animation for important buttons */
+.btn-primary, .btn-success {
+  animation: pulse 2s infinite;
+}
+
+/* Messages */
+#updateMsg, #regMsg {
+  font-size: 14px;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+/* Links with underline animation */
+p a {
+  position: relative;
+  color: var(--bs-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+p a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: var(--bs-primary);
+  transition: width 0.3s ease;
+}
+p a:hover {
+  color: var(--bs-primary-dark);
+}
+p a:hover::after {
+  width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideFadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(var(--bs-primary-rgb), 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(var(--bs-primary-rgb), 0); }
+  100% { box-shadow: 0 0 0 0 rgba(var(--bs-primary-rgb), 0); }
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  body { padding: 20px 10px; }
+  .container { padding: 20px; }
+}
